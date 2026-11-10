@@ -1,14 +1,11 @@
-// Arreglo de estudiantes proporcionado
 const estudiantes = [
     { id: 1, nombre: 'Ana', edad: 20 },
     { id: 2, nombre: 'Juan', edad: 22 },
     { id: 3, nombre: 'María', edad: 21 }
 ];
 
-// Función que recibe el ID y retorna una Promesa
 const buscarEstudiantePorId = (idBuscado) => {
     return new Promise((resolve, reject) => {
-        // Simulamos un pequeño retraso asíncrono (opcional, pero buena práctica)
         setTimeout(() => {
             const estudianteEncontrado = estudiantes.find(est => est.id === idBuscado);
 
@@ -21,9 +18,8 @@ const buscarEstudiantePorId = (idBuscado) => {
     });
 };
 
-// --- Ejemplo de Ejecución solicitada usando .then() y .catch() ---
 
-console.log("--- Búsqueda del estudiante con ID 2 ---");
+console.log("Búsqueda del estudiante con id 2 ");
 buscarEstudiantePorId(2)
     .then(estudiante => {
         console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`);
@@ -32,7 +28,7 @@ buscarEstudiantePorId(2)
         console.error(error);
     });
 
-console.log("--- Búsqueda del estudiante con ID 1 ---");
+console.log(" Búsqueda del estudiante con id 1 ");
 buscarEstudiantePorId(1)
     .then(estudiante => {
         console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`);
@@ -51,7 +47,6 @@ buscarEstudiantePorId(10)
     });
 
 
-// Opcional: Mostrar la lista en el DOM de la página web
 document.addEventListener("DOMContentLoaded", () => {
     const listaUl = document.getElementById("lista-estudiantes");
     estudiantes.forEach(est => {
